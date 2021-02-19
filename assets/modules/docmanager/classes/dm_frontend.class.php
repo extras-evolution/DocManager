@@ -84,7 +84,7 @@ class DocManagerFrontend {
 	}
 	
 	function renderChangeAuthors() {
-		$users = $this->modx->db->select('id,username', $this->modx->getFullTableName('manager_users'));
+		$users = $this->modx->db->select('id,username', $this->modx->getFullTableName('users'));
 		$userOptions = '';
 
 		while ($row = $this->modx->db->getRow($users)) {
