@@ -24,14 +24,14 @@ class DocManager {
 			}
 		}
 		
-		include MODX_MANAGER_PATH.'includes/lang/english.inc.php';
+		include MODX_MANAGER_PATH.'includes/lang/en.inc.php';
 		if($managerLanguage != 'english') {
 			if (file_exists(MODX_MANAGER_PATH.'includes/lang/'.$managerLanguage.'.inc.php')) {
      			include MODX_MANAGER_PATH.'includes/lang/'.$managerLanguage.'.inc.php';
 			}
 		}
 		
-		include MODX_BASE_PATH.'assets/modules/docmanager/lang/english.inc.php';
+		include MODX_BASE_PATH.'assets/modules/docmanager/lang/en.inc.php';
 		if($managerLanguage != 'english') {
 			if (file_exists(MODX_BASE_PATH.'assets/modules/docmanager/lang/'.$managerLanguage.'.inc.php')) {
      			include MODX_BASE_PATH.'assets/modules/docmanager/lang/'.$managerLanguage.'.inc.php';
