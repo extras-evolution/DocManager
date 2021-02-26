@@ -20,9 +20,9 @@ class DocManagerFrontend {
     }
     
     function renderTemplates() {
-		$templateRecordSet = $this->modx->db->select('id,templatename,description', $this->modx->getFullTableName('site_templates'),'','id ASC');
-	
-		$grd = new DataGrid('', $templateRecordSet);
+        $templateRecordSet = \EvolutionCMS\Models\SiteTemplate::query()->select(['id', 'templatename', 'description'])->orderBy('id', 'ASC');
+
+		$grd = new \EvolutionCMS\Support\DataGrid('', $templateRecordSet);
 		$grd->noRecordMsg = $this->dm->lang['DM_tpl_no_templates'];
 		$grd->cssClass = "grid";
 		$grd->columnHeaderClass = "gridHeader";
@@ -38,9 +38,9 @@ class DocManagerFrontend {
 	}   
 	
 	function renderTemplateVars() {
-		$templateRecordSet = $this->modx->db->select('id,templatename,description', $this->modx->getFullTableName('site_templates'),'','id ASC');
+        $templateRecordSet = \EvolutionCMS\Models\SiteTemplate::query()->select(['id', 'templatename', 'description'])->orderBy('id', 'ASC');
 
-		$grd = new DataGrid('', $templateRecordSet);
+        $grd = new \EvolutionCMS\Support\DataGrid('', $templateRecordSet);
 		$grd->noRecordMsg = $this->dm->lang['DM_tpl_no_templates'];
 		$grd->cssClass = "grid";
 		$grd->columnHeaderClass = "gridHeader";
@@ -56,9 +56,9 @@ class DocManagerFrontend {
 	}
 	
 	function renderDocGroups() {
-		$documentgroups = $this->modx->db->select('id,name', $this->modx->getFullTableName('documentgroup_names'),'','id ASC');
-	
-		$grd = new DataGrid('', $documentgroups);
+
+        $documentgroups = \EvolutionCMS\Models\DocumentGroup::query()->select(['id', 'name'])->orderBy('id', 'ASC');
+		$grd = new \EvolutionCMS\Support\DataGrid('', $documentgroups);
 		$grd->noRecordMsg = $this->dm->lang['DM_doc_no_docs'];
 		$grd->cssClass = "grid";
 		$grd->columnHeaderClass = "gridHeader";
