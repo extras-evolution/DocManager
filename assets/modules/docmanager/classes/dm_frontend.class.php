@@ -57,7 +57,7 @@ class DocManagerFrontend {
 	
 	function renderDocGroups() {
 
-        $documentgroups = \EvolutionCMS\Models\DocumentGroup::query()->select(['id', 'name'])->orderBy('id', 'ASC');
+        $documentgroups = \EvolutionCMS\Models\DocumentgroupName::query()->select(['id', 'name'])->orderBy('id', 'ASC');
 		$grd = new \EvolutionCMS\Support\DataGrid('', $documentgroups);
 		$grd->noRecordMsg = $this->dm->lang['DM_doc_no_docs'];
 		$grd->cssClass = "grid";
