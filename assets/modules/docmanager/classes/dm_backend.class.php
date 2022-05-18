@@ -484,11 +484,15 @@ class DocManagerBackend {
 	}
 
     function secureWebDocument($docId = '') {
+		$groupAccess = 'webgroup_access';
+	    	if ( (int)$this->modx->getConfig("settings_version") > 2 ) {
+    			$groupAccess = 'membergroup_access';
+    		}
 		$rs = $this->modx->db->select(
 			'DISTINCT sc.id',
 			$this->modx->getFullTableName("site_content") . " sc
 				LEFT JOIN " . $this->modx->getFullTableName("document_groups") . " dg ON dg.document = sc.id
-				LEFT JOIN " . $this->modx->getFullTableName("webgroup_access") . " wga ON wga.documentgroup = dg.document_group",
+				LEFT JOIN " . $this->modx->getFullTableName($groupAccess) . " wga ON wga.documentgroup = dg.document_group",
 			($docId > 0 ? " sc.id={$docId} AND " : "") . "wga.id>0"
 			);
 		$ids = $this->modx->db->getColumn("id", $rs);
