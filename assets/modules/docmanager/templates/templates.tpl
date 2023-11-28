@@ -1,6 +1,7 @@
 <p>[+lang.DM_tpl_desc+]</p>
 <br />
 <form name="template" action="">
+    [+csrf+]
     [+templates.grid+]
     <br />
     <table class="grid">

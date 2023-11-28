@@ -2,6 +2,7 @@
 <h4><i class="fa fa-calendar"></i> [+lang.DM_adjust_dates_header+]</h4>
 <p>[+lang.DM_adjust_dates_desc+]</p>
 <form id="dates" name="dates" method="post" action="">
+    [+csrf+]
     <table>
         <tr>
             <td><label for="date_pubdate" id="date_pubdate_label">[+lang.DM_date_pubdate+]</label></td>

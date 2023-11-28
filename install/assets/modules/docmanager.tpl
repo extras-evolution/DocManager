@@ -5,7 +5,7 @@
  * Quickly perform bulk updates to the Documents in your site including templates, publishing details, and permissions
  * 
  * @category	module
- * @version 	3.0
+ * @version 	3.1
  * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
  * @internal	@properties
  * @internal	@guid docman435243542tf542t5t	
@@ -26,6 +26,8 @@ $dmb = new DocManagerBackend($dm, $modx);
 
 $dm->ph = $dm->getLang();
 $dm->ph['theme'] = $dm->getTheme();
+$dm->ph['token'] = csrf_token();
+$dm->ph['csrf'] = (string)csrf_field();
 $dm->ph['ajax.endpoint'] = MODX_SITE_URL.'assets/modules/docmanager/tv.ajax.php';
 $dm->ph['datepicker.offset'] = $modx->config['datepicker_offset'];
 $dm->ph['datetime.format'] = $modx->config['datetime_format'];

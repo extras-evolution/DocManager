@@ -8,6 +8,7 @@
     <script type="text/javascript" src="media/script/mootools/mootools.js"></script>
     <script type="text/javascript" src="../assets/modules/docmanager/js/docmanager.js"></script>
     <script type="text/javascript">
+        const token = '[+token+]';
       function loadTemplateVars(tplId)
       {
         document.getElementById('tvloading').style.display = 'block';
@@ -36,7 +37,7 @@
             }
           }
         };
-        xhr.send('theme=[+theme+]&tplID=' + tplId);
+        xhr.send('_token=' + token + '&theme=[+theme+]&tplID=' + tplId);
       }
 
       function save()

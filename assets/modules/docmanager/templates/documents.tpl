@@ -4,6 +4,7 @@
             <div class="tab-header">[+lang.DM_range_title+]</div>
             <div class="tab-body">
                 <form name="range" id="range" action="" method="post">
+                    [+csrf+]
                     <input type="hidden" id="newvalue" name="newvalue" value="" />
                     <input type="hidden" id="setoption" name="setoption" value="" />
                     <input type="hidden" id="pubdate" name="pubdate" value="" />

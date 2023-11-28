@@ -40,6 +40,7 @@
         <b>[+lang.DM_update_title+]</b>
         <p>[+update.message+]</p>
         <form id="backform" method="post" style="display: none;" action="">
+            [+csrf+]
             <input type="submit" name="back" value="[+lang.DM_process_back+]" />
         </form>
     </div>

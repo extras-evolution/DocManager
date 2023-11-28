@@ -4,6 +4,7 @@
 <p>[+lang.DM_adjust_authors_desc+]</p>
 
 <form name="authors" method="post" action="">
+    [+csrf+]
     <label for="author_createdby">[+lang.DM_adjust_authors_createdby+]</label>
     <select name="author_createdby" size="1">
         <option value="0">[+lang.DM_adjust_authors_noselection+]</option>
